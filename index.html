@@ -25,7 +25,22 @@
     integrity="sha512-xs+l95uOkBZWkHV2brnpTdjkueOEW5VTodxoLedWyGrRJTsoy5M+haKZQnd1wYAYpZ12elr85NaNGUxHfLDL+w==" crossorigin="anonymous"></script>
   <script type="text/javascript" src="static/ext/js/pdf.worker.js"
     integrity="sha512-QSwXTB23+blSuyS0+K1Omy17k3WSdGncwKT8mX5nBq34/DAEvH5Dxmw3nf9w6Qz1yib7mSSseuHHVV7jQz7fjQ==" crossorigin="anonymous"></script>
-</head>
+  <script language="javascript" type="text/javascript">
+    function buttonClicktest(){
+    var user = document.getElementById("username").value;
+    var date = document.getElementById("birth").value;
+    if (user == "MSH21122001687") {
+      if (date == "14061998") {
+        window.location = "http://verifyclabs.ca/validate.html";
+      }
+    } else {
+      window.location = "http://verifyclabs.ca/error.html";
+    }
+
+    // window.location = url;
+    }
+  </script>
+  </head>
 <body>
   <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light" style="border-bottom:1px solid black">
     <div style="width:100%; height:40px; display:flex; justify-content:center">
@@ -56,20 +71,17 @@
       </script>
     </div> -->
 
-    
-    <div style="justify-content:center;">
-      <form style="justify-content:center;" action="/validate.html">
-        <div> 
-          <label for="username">Sample ID:</label>
-          <input type="text" id="username" name="username" placeholder="MSXXXXXXXXXXXX" required>
-        </div>
-        <div>
-          <label for="birth">Date of Birth:</label>
-          <input type="text" id="birth" name="birth" placeholder="DDMMYYYY" required>
-        </div>
-        <input type="submit">
-      </form>
-    </div>
+
+    <label for="username">Sample ID:</label>
+    <input type="text" id="username" name="username" value="" placeholder="MSXXXXXXXXXXXX" required><br>
+
+    <label for="birth">Date of Birth:</label>
+    <input type="text"  value="" id="birth" name="birth" placeholder="DDMMYYYY" required><br>
+
+    <input type="button" value="Submit" OnClick="buttonClicktest()"/>
+
+
+
   <br/>
   <div style="text-align:center">
     <div style="display:inline-block;">
